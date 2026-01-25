@@ -1,1 +1,246 @@
-woyoo
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nusantarasakti.site | UnOfficial Part of NSS</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Top Menu */
+    header {
+      height: 70px;
+      padding: 0 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #0f172a;
+      color: #fff;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .header-text {
+      font-size: 14px;
+      opacity: 0.85;
+    }
+
+    .wa-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      background: #25D366;
+      color: #fff;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .wa-btn:hover {
+      background: #1ebe5d;
+      transform: translateY(-2px);
+    }
+
+    .wa-btn img {
+      width: 18px;
+      height: 18px;
+    }
+
+    /* Body Section */
+    .main {
+      flex: 1;
+      display: flex;
+    }
+
+    .panel {
+      flex: 1;
+      position: relative;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+      cursor: pointer;
+      transition: flex 0.5s ease;
+    }
+
+    .panel::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      transition: transform 0.6s ease;
+      z-index: 1;
+    }
+
+    .panel::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.55);
+      z-index: 2;
+    }
+
+    .panel-content {
+      position: relative;
+      z-index: 3;
+      max-width: 70%;
+      transition: transform 0.4s ease;
+    }
+
+    .panel h2 {
+      font-size: 36px;
+      margin-bottom: 12px;
+    }
+
+    .panel p {
+      font-size: 16px;
+      line-height: 1.5;
+      opacity: 0.9;
+    }
+
+    .panel:hover::before {
+      transform: scale(1.1);
+    }
+
+    .panel:hover .panel-content {
+      transform: translateY(-8px);
+    }
+
+    /* Background images */
+    .motor::before {
+      background-image: url('https://images.unsplash.com/photo-1518655048521-f130df041f66');
+    }
+
+    .kantor::before {
+      background-image: url('https://images.unsplash.com/photo-1521791055366-0d553872125f');
+    }
+
+    /* Footer */
+    footer {
+      height: 60px;
+      background: #020617;
+      color: #cbd5f5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        height: auto;
+        padding: 16px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+
+      .header-right {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .header-text {
+        font-size: 13px;
+      }
+
+      .wa-btn {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .main {
+        flex-direction: column;
+      }
+
+      .panel {
+        min-height: 260px;
+      }
+
+      .panel h2 {
+        font-size: 26px;
+      }
+
+      .panel p {
+        font-size: 14px;
+      }
+
+      footer {
+        font-size: 13px;
+        padding: 0 12px;
+        text-align: center;
+      }
+    }
+
+      .panel h2 {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Menu -->
+  <header>
+    <div class="logo">NUSANTARASAKTI</div>
+    <div class="header-right">
+      <div class="header-text">UnOfficial Part of NSS, Just Sales</div>
+      <a class="wa-btn" href="https://wa.me/6281234567890?text=Halo%20ka%2c%20ingin%20bertanya%20seputar%3b%3b" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+        Hubungi Sales
+      </a>
+    </div>
+  </header>
+
+  <!-- Body -->
+  <section class="main">
+    <div class="panel motor">
+      <div class="panel-content">
+        <h2>Penjualan Motor</h2>
+        <p>Melakukan penjualan motor Honda seluruh Indonesia, Saya adalah Sales Resmi dari NSS Group.</p>
+      </div>
+    </div>
+
+    <div class="panel kantor">
+      <div class="panel-content">
+        <h2>Dana Tunai</h2>
+        <p>Memberikan pinjaman seluruh Indonesia, Saya adalah Sales Resmi dari NSS Group.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    © 2026 UnOfficial Part of NSS. All rights reserved.
+  </footer>
+
+</body>
+</html>
