@@ -50,7 +50,7 @@
       align-items: center;
       gap: 8px;
       padding: 8px 14px;
-      background: #25D366;
+      background: #00bb46;
       color: #fff;
       border-radius: 6px;
       text-decoration: none;
@@ -73,11 +73,6 @@
     .main {
       flex: 1;
       display: flex;
-    }
-
-    a.panel {
-      text-decoration: none;
-      color: #fff;
     }
 
     .panel {
@@ -137,6 +132,11 @@
       transform: translateY(-8px);
     }
 
+    a.panel {
+    text-decoration: none;
+    color: #fff;
+    }
+
     /* Background images */
     .motor::before {
       background-image: url('/img/motor1.jpg');
@@ -160,13 +160,26 @@
     @media (max-width: 768px) {
       header {
         height: auto;
-        padding: 14px 16px;
-        flex-direction: row;
-        align-items: center;
+        padding: 16px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
       }
 
       .header-right {
-        display: none; /* sembunyikan teks & tombol di header saat mobile */
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .header-text {
+        font-size: 13px;
+      }
+
+      .wa-btn {
+        width: 100%;
+        justify-content: center;
       }
 
       .main {
@@ -224,21 +237,6 @@
 }
 
 
-    .panel h2 {
-        font-size: 26px;
-      }
-
-      .panel p {
-        font-size: 14px;
-      }
-
-      footer {
-        font-size: 13px;
-        padding: 0 12px;
-        text-align: center;
-      }
-    }
-
       .panel h2 {
         font-size: 28px;
       }
@@ -260,31 +258,33 @@
   </header>
 
   <!-- Floating WhatsApp (Mobile Only) -->
+  
   <a href="https://wa.me/6287794563599?text=Halo%20dengan%20nusantarasakti%3F%20saya%20ingin%20bertanya%20seputar%2e%2e" target="_blank" class="wa-floating">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
-    Hubungi Sales
-  </a>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" /> Hubungi Sales </a>
 
   <!-- Body -->
-  <section class="main">
-    <a href="https://motor.nusantarasakti.site" target="_blank" class="panel motor">
-      <div class="panel-content">
-        <h2>Penjualan Motor Honda Baru</h2>
-        <p>Melayani pembelian motor Honda baru resmi dari dealer. Menjangkau seluruh Indonesia.</p>
-      </div>
-    </a>
 
-    <a href="https://danatunai.nusantarasakti.site" target="_blank" class="panel kantor">
-      <div class="panel-content">
-        <h2></h2>Pembiayaan Dana Tunai</h2>
-        <p>Melayani pembiayaan untuk multiguna motor dengan jaminan BPKB yang menjangkau seluruh Indonesia.</p>
-      </div>
-    </a>
-  </section>
+  <section class="main">
+<a href="https://motor.nusantarasakti.site" target="_blank" class="panel motor">
+<div class="panel-content">
+<h2>Penjualan Motor Honda Baru</h2>
+<p>Melayani pembelian motor Honda baru resmi dari dealer. Menjangkau seluruh Indonesia.</p>
+</div>
+</a>
+
+
+<a href="https://danatunai.nusantarasakti.site" target="_blank" class="panel kantor">
+<div class="panel-content">
+<h2>Pembiayaan Dana Tunai</h2>
+<p>Melayani pembiayaan untuk multiguna motor dengan jaminan BPKB yang menjangkau seluruh Indonesia.</p>
+</div>
+</a>
+</section>
+ 
 
   <!-- Footer -->
   <footer>
-   © 2026 Unofficial website dari Nusantara Sakti Group. All rights reserved.
+    © 2026 Unofficial website dari Nusantara Sakti Group. All rights reserved.
   </footer>
 
 </body>
