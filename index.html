@@ -15,7 +15,7 @@
     display: none;
   }
 
-  /* Header lebih ringkas */
+  /* Header ringkas */
   header {
     padding: 14px 16px;
   }
@@ -24,26 +24,37 @@
     font-size: 20px;
   }
 
-  /* Tombol WhatsApp jadi fixed di bawah */
+  /* Reset pengaruh header */
+  .header-right {
+    align-items: center;
+  }
+
+  /* Tombol WhatsApp FIXED & CENTER */
   .wa-btn {
     position: fixed;
     bottom: 12px;
     left: 12px;
     right: 12px;
 
-    width: auto;
+    display: flex;
+    align-items: center;
     justify-content: center;
-    z-index: 999;
 
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    width: calc(100% - 24px);
+    margin: 0 auto;
+
+    z-index: 999;
+    border-radius: 10px;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.3);
   }
 
-  /* Biar konten tidak ketutup tombol */
+  /* Supaya konten tidak ketutup tombol */
   body {
-    padding-bottom: 80px;
+    padding-bottom: 90px;
   }
 
 }
+
 
 
     
