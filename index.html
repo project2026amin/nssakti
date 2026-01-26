@@ -5,6 +5,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>UnOfficial Part of NSS</title>
   <style>
+   /* ===============================
+   MOBILE MODE (<= 768px)
+   =============================== */
+@media (max-width: 768px) {
+
+  /* Hilangkan teks unofficial */
+  .header-text {
+    display: none;
+  }
+
+  /* Header lebih ringkas */
+  header {
+    padding: 14px 16px;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  /* Tombol WhatsApp jadi fixed di bawah */
+  .wa-btn {
+    position: fixed;
+    bottom: 12px;
+    left: 12px;
+    right: 12px;
+
+    width: auto;
+    justify-content: center;
+    z-index: 999;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  }
+
+  /* Biar konten tidak ketutup tombol */
+  body {
+    padding-bottom: 80px;
+  }
+
+}
+
+
+    
     * {
       margin: 0;
       padding: 0;
