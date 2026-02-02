@@ -5,67 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>UnOfficial Part of NSS</title>
   <style>
-   /* ===============================
-   MOBILE MODE (<= 768px)
-   =============================== */
-@media (max-width: 768px) {
-
-  .header-text {
-    display: none;
-  }
-
-  /* WA MOBILE ONLY */
-  .wa-btn.wa-mobile {
-    position: fixed;
-    bottom: 16px;
-    left: 50%;
-    transform: translateX(-50%);
-
-    width: calc(100% - 32px);
-    max-width: 420px;
-    height: 58px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-
-    font-size: 16px;
-    font-weight: 700;
-
-    border-radius: 999px;
-    z-index: 9999;
-    box-shadow: 0 12px 28px rgba(0,0,0,0.35);
-  }
-
-  .wa-btn.wa-mobile img {
-    width: 22px;
-    height: 22px;
-  }
-
-  body {
-    padding-bottom: 110px;
-  }
-
-}
-
-
-
-    
+    /* ===============================
+       BASE STYLES
+    =============================== */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: 'Segoe UI', Arial, sans-serif;
     }
 
     body {
-      min-height: 100vh;
+      height: 100vh;
       display: flex;
       flex-direction: column;
+      overflow: hidden; /* Mencegah scroll yang tidak diinginkan */
     }
 
-    /* Top Menu */
+    /* Header */
     header {
       height: 70px;
       padding: 0 40px;
@@ -74,11 +31,14 @@
       justify-content: space-between;
       background: #c30010;
       color: #fff;
+      z-index: 10;
+      flex-shrink: 0;
     }
 
     .logo {
       font-size: 22px;
-      font-weight: bold;
+      font-weight: 800;
+      letter-spacing: 1px;
     }
 
     .header-right {
@@ -88,27 +48,31 @@
     }
 
     .header-text {
-      font-size: 14px;
+      font-size: 13px;
       opacity: 0.85;
+      max-width: 300px;
+      text-align: right;
     }
 
+    /* WhatsApp Button Desktop */
     .wa-btn {
       display: flex;
       align-items: center;
       gap: 8px;
-      padding: 8px 14px;
+      padding: 10px 18px;
       background: #00bb46;
       color: #fff;
-      border-radius: 6px;
+      border-radius: 999px;
       text-decoration: none;
       font-size: 14px;
       font-weight: 600;
-      transition: background 0.3s ease, transform 0.2s ease;
+      transition: all 0.3s ease;
     }
 
     .wa-btn:hover {
       background: #1ebe5d;
       transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,187,70,0.3);
     }
 
     .wa-btn img {
@@ -116,10 +80,11 @@
       height: 18px;
     }
 
-    /* Body Section */
+    /* Main Section - Split Screen */
     .main {
-      flex: 1;
+      flex: 1; /* Mengambil sisa layar penuh */
       display: flex;
+      width: 100%;
     }
 
     .panel {
@@ -131,8 +96,8 @@
       justify-content: center;
       text-align: center;
       overflow: hidden;
-      cursor: pointer;
-      transition: flex 0.5s ease;
+      text-decoration: none;
+      transition: flex 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .panel::before {
@@ -141,7 +106,7 @@
       inset: 0;
       background-size: cover;
       background-position: center;
-      transition: transform 0.6s ease;
+      transition: transform 0.8s ease;
       z-index: 1;
     }
 
@@ -149,111 +114,94 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: rgba(0, 0, 0, 0.55);
+      background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7));
       z-index: 2;
+    }
+
+    /* Background Images (Ganti dengan URL asli Anda) */
+    .motor::before {
+      background-image: url('img/motor1.jpg?auto=format&fit=crop&q=80&w=1000');
+    }
+
+    .kantor::before {
+      background-image: url('img/danatunai1.png?auto=format&fit=crop&q=80&w=1000');
     }
 
     .panel-content {
       position: relative;
       z-index: 3;
-      max-width: 70%;
-      transition: transform 0.4s ease;
+      padding: 0 20px;
+      max-width: 500px;
+      transition: all 0.4s ease;
     }
 
     .panel h2 {
-      font-size: 36px;
-      margin-bottom: 12px;
+      font-size: clamp(24px, 4vw, 36px);
+      margin-bottom: 15px;
+      font-weight: 700;
+      text-transform: uppercase;
     }
 
     .panel p {
-      font-size: 16px;
-      line-height: 1.5;
+      font-size: clamp(14px, 1.5vw, 18px);
+      line-height: 1.6;
       opacity: 0.9;
     }
 
+    /* Hover Effects */
+    .panel:hover {
+      flex: 1.2;
+    }
+
     .panel:hover::before {
-      transform: scale(1.1);
+      transform: scale(1.05);
     }
 
-    .panel:hover .panel-content {
-      transform: translateY(-8px);
-    }
-
-    a.panel {
-    text-decoration: none;
-    color: #fff;
-    }
-
-    /* Background images */
-    .motor::before {
-      background-image: url('/img/motor1.jpg');
-    }
-
-    .kantor::before {
-      background-image: url('img/danatunai1.png');
-    }
-
-    /* Footer */
-    footer {
-      height: 60px;
-      background: #f0f0f0;
-      color: #c30010;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 14px;
-    }
-
+    /* ===============================
+       MOBILE MODE (<= 768px)
+    =============================== */
     @media (max-width: 768px) {
+      body {
+        overflow: auto; /* Izinkan scroll di mobile jika konten meluap */
+        height: auto;
+        min-height: 100vh;
+      }
+
       header {
         height: auto;
-        padding: 16px 20px;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 12px;
-      }
-
-      .header-right {
-        width: 100%;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-      }
-
-      .header-text {
-        font-size: 13px;
-      }
-
-      .wa-btn {
-        width: 100%;
+        padding: 15px 20px;
+        flex-direction: row;
         justify-content: center;
+      }
+
+      .header-text, .wa-btn.desktop-only {
+        display: none;
       }
 
       .main {
         flex-direction: column;
+        height: calc(100vh - 70px); /* Main mengisi sisa tinggi layar mobile */
       }
 
       .panel {
-        min-height: 260px;
+        flex: 1; /* Membagi dua layar secara vertikal */
+        min-height: 50%;
       }
 
-      .panel h2 {
-        font-size: 26px;
-      }
-
-      .panel p {
-        font-size: 14px;
-      }
-
-      footer {
-        font-size: 13px;
-        padding: 0 12px;
-        text-align: center;
-      }
-    }
-
-      .panel h2 {
-        font-size: 28px;
+      /* Floating WhatsApp Mobile */
+      .wa-btn.wa-mobile {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        max-width: 350px;
+        height: 55px;
+        display: flex;
+        z-index: 999;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+        justify-content: center;
+        font-size: 16px;
       }
     }
   </style>
@@ -264,7 +212,8 @@
   <header>
     <div class="logo">NUSANTARASAKTI</div>
     <div class="header-right">
-      <div class="header-text">Unofficial website dari Nusantara Sakti Group. Dikelola secara pribadi.</div>
+      <div class="header-text">UnOfficial website dari Nusantara Sakti Group. Dikelola secara pribadi.</div>
+      <!-- Tombol ini muncul di desktop & sebagai tombol melayang di mobile via CSS -->
       <a class="wa-btn wa-mobile" href="https://wa.me/6287794563599?text=Halo%20dengan%20nusantarasakti%3F%20saya%20ingin%20bertanya%20seputar%2e%2e" target="_blank">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
         Hubungi Sales
@@ -272,30 +221,22 @@
     </div>
   </header>
 
-  <!-- Body -->
-
+  <!-- Body - Full Screen Split -->
   <section class="main">
-<a href="https://motor.nusantarasakti.site" target="_blank" class="panel motor">
-<div class="panel-content">
-<h2>Penjualan Motor Honda Baru</h2>
-<p>Melayani pembelian motor Honda baru resmi dari dealer. Menjangkau seluruh Indonesia.</p>
-</div>
-</a>
+    <a href="https://motor.nusantarasakti.site" target="_blank" class="panel motor">
+      <div class="panel-content">
+        <h2>Penjualan Motor Honda Baru</h2>
+        <p>Melayani pembelian motor Honda baru resmi dari dealer. Menjangkau seluruh Indonesia.</p>
+      </div>
+    </a>
 
-
-<a href="https://danatunai.nusantarasakti.site" target="_blank" class="panel kantor">
-<div class="panel-content">
-<h2>Pembiayaan Dana Tunai</h2>
-<p>Melayani pembiayaan untuk multiguna motor dengan jaminan BPKB yang menjangkau seluruh Indonesia.</p>
-</div>
-</a>
-</section>
- 
-
-  <!-- Footer -->
-  <footer>
-    © 2026 Unofficial website dari Nusantara Sakti Group. All rights reserved.
-  </footer>
+    <a href="https://nusantarasakti.site" target="_blank" class="panel kantor">
+      <div class="panel-content">
+        <h2>Pembiayaan Dana Tunai</h2>
+        <p>Melayani pembiayaan untuk multiguna motor dengan jaminan BPKB yang menjangkau seluruh Indonesia.</p>
+      </div>
+    </a>
+  </section>
 
 </body>
 </html>
